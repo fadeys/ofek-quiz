@@ -14,7 +14,18 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('UserTableSeeder');
 	}
 
+}
+
+class UserTableSeeder extends Seeder {
+
+	public function run() {
+		$user = new \App\User();
+		$user->email = 'eliraz@design-studio.co.il';
+		$user->password = Hash::make('12345');
+		$user->name = 'Admin';
+		$user->save();
+	}
 }

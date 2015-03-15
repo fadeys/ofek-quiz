@@ -19,3 +19,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('admin/questions', 'QuestionsController');
+Route::resource('admin/answers', 'AnswersController', ['only' => ['edit', 'update', 'destroy', 'store']]);
+Route::get('admin/answers/create/{questionId}', ['as' => 'admin.answers.create', 'uses' => 'AnswersController@create']);
