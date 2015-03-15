@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ComposerServiceProvider extends ServiceProvider {
+class MacroServiceProvider extends ServiceProvider {
 
 	/**
 	 * Bootstrap the application services.
@@ -11,7 +11,7 @@ class ComposerServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-
+		require base_path() . '/app/Http/macros.php';
 	}
 
 	/**

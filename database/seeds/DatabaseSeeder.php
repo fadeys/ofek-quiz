@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder {
 	public function run() {
 		$user = new \App\User();
 		$user->email = 'eliraz@design-studio.co.il';
-		$user->password = Hash::make('12345');
+		$user->password = Hash::make('admin');
 		$user->name = 'Admin';
 		$user->save();
 	}
