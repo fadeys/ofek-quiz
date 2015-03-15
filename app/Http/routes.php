@@ -11,7 +11,12 @@
 |
 */
 
+
 Route::get('/', 'QuestionsController@index');
+Route::get('/test', function() {
+	$questions = App\Question::all();
+	return view('pages.quiz', ['questions' => $questions]);
+});
 
 Route::get('home', 'QuestionsController@index');
 
