@@ -18,6 +18,11 @@ Route::get('/test', function() {
 	return view('pages.quiz', ['questions' => $questions]);
 });
 
+Route::post('quiz/done', [
+	'as' => 'quiz.store',
+	'uses' => 'QuizController@store'
+]);
+
 Route::get('home', 'QuestionsController@index');
 
 Route::controllers([

@@ -25,4 +25,10 @@ class Question extends Model {
 		return !$answer->isEmpty();
 	}
 
+	public function isCorrectAnswer($answerId) {
+		$answer = $this->answers()->where('id', '=', $answerId)->first();
+		if (!$answer) return false;
+		return (boolean) $answer->correct;
+	}
+
 }

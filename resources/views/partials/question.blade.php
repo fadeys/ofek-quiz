@@ -1,4 +1,5 @@
-<div class="tab-pane" id="{{ $question->name .'-'. $question->id }}">
+<h3>שאלה #{{ $question->id }}</h3>
+<section>
     <h4 class="info-text">{!! $question->question !!}</h4>
     <div class="answers">
         @foreach ($answers as $answer)
@@ -10,4 +11,4 @@
             </div>
         @endforeach
     </div>
-</div>
+</section>

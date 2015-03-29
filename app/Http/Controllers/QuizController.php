@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Question;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller {
@@ -34,7 +35,17 @@ class QuizController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$results = [];
+		foreach (\Input::except('_token') as $question => $answer) {
+			$questionId = substr(strstr($question, '-'), 1);
+			$question = Question::find($questionId);
+			$results[] = [
+				'question' => $question->question,
+				'result' => $question->isCorrectAnswer($answer)
+			];
+
+		}
+		return $results;
 	}
 
 	/**

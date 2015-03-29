@@ -10,33 +10,28 @@
 
 	@section('css')
 		{!! HTML::style('css/app.css') !!}
-		{!! HTML::style('css/gsdk-base.css') !!}
+		{!! HTML::style('css/jquery.steps.css') !!}
+        <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/master/dist/cdnjs/3.3.1/css/bootstrap-rtl.min.css">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 	@show
+    @section('js')
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        {!! HTML::script('js/bootstrap.min.js') !!}
+        {!! HTML::script('js/jquery.steps.min.js') !!}
+    @show()
+
 
 </head>
 
 <body>
-<div class="image-container set-full-height" style="background-image: url('{{ URL::asset('images/wizard-boat.jpg') }}')">
-	<a href="#">
-		<div class="logo-container">
-			<div class="logo">
-				<img src="{{ URL::asset('images/new_logo.png') }}">
-			</div>
-			<div class="brand">אופק מתא״ם - שאלון</div>
-		</div>
-	</a>
-
-    @yield('content')
-</div>
+	<div class="container">
+        <h1>שאלון אופק מתא״ם</h1>
+        <div class="well">
+            @yield('content')
+        </div>
+    </div>
 
 </body>
 
-@section('js')
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    {!! HTML::script('js/bootstrap.min.js') !!}
-    {!! HTML::script('js/jquery.bootstrap.wizard.js') !!}
-    {!! HTML::script('js/wizard.js') !!}
-@show()
 
 </html>
