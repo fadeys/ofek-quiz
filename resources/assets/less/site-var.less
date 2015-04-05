@@ -1,0 +1,97 @@
+@full-width: 1200px;
+@light-grey: #f4f4f4;
+@dark-grey:  #dad5d5;
+@placeholder-color: #6b6b6b;
+@base-color: #404140;
+@blue-color: #24a8e0;
+@pink-color: #e91d85;
+@green-color: #75b00f;
+@sm-min-width: 768px;
+
+//************************** FUNCTIONS ******************************//
+.box(@padding, @background, @mobile-padding) {
+	background:@background;
+	padding:@padding;
+	@media (max-width: @sm-min-width) {
+		padding:@mobile-padding;
+	}
+}
+.make-list-divider(@top:1em; @height:1.5em; @background: transparent) {
+	position:relative;
+	&:after {
+		content:'';
+		width:1px;
+		position:absolute;
+		height:@height;
+		top: @top;
+		left:0;
+		background: @background;
+		//		@media (max-width: @sm-min-width) {
+		//			content:none;
+		//			height:0;
+		//			width:0;
+		//		}
+	}
+	&.last:after,&:last-child:after {
+		content:none;
+		height:0;
+		width:0;
+	}
+
+}
+.disable-border-mobile() {
+	@media (max-width: @sm-min-width) {
+		border:none;
+	}
+}
+
+.border-radius(...) {
+	@process: ~`(function(e){e=e||"0";var t=/\d/gi,r=/(?:\s|^)(\.?\d+\.?\d*)(?![^(]*\)|\w|%|\.)/gi;return/^[^, ]*,/.test(e)&&(e=e.replace(/(?:,)(?![^(]*\))/g,"")),t.test(e)&&(e=e.replace(r,function(e){return 0==e&&e||e+"px"})),e})((function(){var e="@{arguments}";return e=e.replace(/^\[|\]$/g,"")})())`;
+	-webkit-border-radius: @process; -webkit-background-clip: padding-box;
+	-moz-border-radius: @process; -moz-background-clip: padding;
+	border-radius: @process; background-clip: padding-box;
+}
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+	box-shadow: @shadow;
+}
+.basic-form() {
+	input, textarea {
+		width:100%;
+		border: 1px #BBBBBB solid;
+		font-weight: normal;
+	}
+	.form-group {
+		margin-bottom:5px;
+	}
+	button {
+		padding:2px 50px 2px 50px;
+		color: #ffffff;
+		background: @base-color;
+		border: 1px @base-color solid;
+		&:hover {
+			background: darken(@base-color, 60%);
+		}
+	}
+}
+.placeholder(@color: @placeholder-color) {
+	&:-moz-placeholder {
+		color: @color;
+	}
+	&:-ms-input-placeholder {
+		color: @color;
+	}
+	&::-webkit-input-placeholder {
+		color: @color;
+	}
+}
+
+.back-to-collection() {
+	display: block;
+	margin-top: 40px;
+	color: @pink-color;
+	text-decoration: none;
+	&:hover {
+		color: @blue-color;
+	}
+}

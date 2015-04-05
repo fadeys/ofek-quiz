@@ -1,0 +1,147 @@
+@blue-color: #24a8e0;
+@pink-color: #e91d85;
+@green-color: #75b00f;
+
+.homepage-slideshow-wrapper {
+	position:relative;
+	background: #efefef;
+	height:470px;
+	overflow:hidden;
+	.homepage-slideshow-item {
+		position:absolute;
+		background: #efefef;
+		top:0;
+		right:0;
+		width: 100%;
+		@media (max-width: @sm-min-width) {
+			top:auto;
+			bottom:0;
+		}
+		.homepage-slideshow-item-text {
+			margin-top:10%;
+			padding-right:25px;
+			h1 {
+				font-weight: bolder;
+				line-height: 1;
+				margin:0 0 5px 0;
+			}
+		}
+		.homepage-slideshow-item-image {
+
+		}
+	}
+}
+.homepage-messages-wrapper {
+	background: #d6d6d6;
+	border:1px solid #b5b5b5;
+	height:40px;
+	margin-top:10px;
+	overflow:hidden;
+	position:relative;
+	.homepage-messages-panel { position:relative; }
+	.homepage-messages-item {
+		position:relative;
+		font-size:28px;
+		color:@blue-color;
+		height:100%;
+		text-align: center;
+	}
+}
+
+.homepage-course-links {
+	margin-top:35px;
+	.homepage-course-link-item {
+		@media (max-width: @sm-min-width) {
+			margin-bottom:10px;
+		}
+		a {
+			display: block;
+			img {
+				float:right;
+				margin-left:10px;
+			}
+			.homepage-course-link-item-text {
+				display:block;
+			}
+			&.hover-blue {
+				&:hover { color:@blue-color; }
+			}
+			&.hover-green {
+				&:hover { color:@green-color; }
+			}
+			&.hover-pink {
+				&:hover { color:@pink-color; }
+			}
+		}
+	}
+}
+
+.homepage-article-links {
+	margin-top: 35px;
+	.homepage-article-link-item {
+		@media (max-width: @sm-min-width) {
+			margin-bottom:10px;
+		}
+		background:#efefef;
+		border:1px solid #b5b5b5;
+		height:252px;
+		position: relative;
+		a {
+			padding:20px 20px 12px 35px;
+			display:block;
+			width:100%;
+			height: 100%;
+			span {
+				display:block;
+			}
+			&:hover {
+				color:inherit;
+			}
+			.homepage-article-link-item-title {
+				color:@pink-color;
+				margin-bottom: 2px;
+				font-size:1.5em;
+				font-weight: bolder;
+			}
+			.homepage-article-link-item-arrow {
+				color:@pink-color;
+				font-size:1.2em;
+				text-align:left;
+				position: absolute;
+				top:88%;
+				left:15px;
+			}
+		}
+	}
+}
+
+.homepage-icon-links {
+	margin-top:35px;
+	.homepage-icon-link-item {
+		@media (max-width: @sm-min-width) {
+			margin-bottom:10px;
+		}
+		position: relative;
+		a {
+			display:block;
+			width:100%;
+			height:100%;
+			span {
+				display:block;
+				&.base-circle:hover {
+					background: @blue-color;
+				}
+			}
+			text-align:center;
+			.homepage-icon-link-item-title {
+				font-weight: bolder;
+				font-size:1.4em;
+				margin-top:10px;
+			}
+			.homepage-icon-link-item-text {
+				padding:0 20px;
+			}
+		}
+	}
+
+}

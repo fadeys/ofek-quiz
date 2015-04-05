@@ -1,5 +1,5 @@
-<h3>שאלה #{{ $question->id }}</h3>
-<section>
+<section class="step" data-step-title="lala">
+    <h3>{!! $question->name !!}</h3>
     <h4 class="info-text">{!! $question->question !!}</h4>
     <div class="answers">
         @foreach ($answers as $answer)

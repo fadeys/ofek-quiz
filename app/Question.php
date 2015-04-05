@@ -20,6 +20,10 @@ class Question extends Model {
 		return $this->hasMany('App\\Answer');
 	}
 
+	public function getCorrectAnswer() {
+		return $this->answers()->where('correct', '=', 1)->get();
+	}
+
 	public function hasCorrectAnswer() {
 		$answer = Answer::correctOfQuestion($this->id);
 		return !$answer->isEmpty();

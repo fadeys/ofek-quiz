@@ -26,10 +26,10 @@
                 @endif
                     <div class="panel-body">
                         {!! Form::model($answer, ['route' => ['admin.answers.update', $answer->id], 'method' => 'PUT']) !!}
-                        <div class="form-group">
-                            <label class="control-label" for="answer-name">שם התשובה: (לא חובה)</label>
-                            {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'answer-name']) !!}
-                        </div>
+                        {{--<div class="form-group">--}}
+                            {{--<label class="control-label" for="answer-name">שם התשובה: (לא חובה)</label>--}}
+                            {{--{!! Form::text('name', null, ['class' => 'form-control', 'id' => 'answer-name']) !!}--}}
+                        {{--</div>--}}
                         <div class="form-group">
                             <label class="control-label" for="answer-answer">התשובה:</label>
                             {!! Form::textarea('answer', null, ['class' => 'form-control', 'id' => 'answer-answer']) !!}

@@ -12,8 +12,8 @@
 */
 
 
-Route::get('/', 'QuestionsController@index');
-Route::get('/test', function() {
+Route::get('/admin', 'QuestionsController@index');
+Route::get('/', function() {
 	$questions = App\Question::all();
 	return view('pages.quiz', ['questions' => $questions]);
 });

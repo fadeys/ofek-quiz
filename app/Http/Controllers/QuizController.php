@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -35,17 +36,32 @@ class QuizController extends Controller {
 	 */
 	public function store()
 	{
+		$countAllQuestions = count(\Input::except('_token'));
+		$countCorrectAnswers = 0;
 		$results = [];
 		foreach (\Input::except('_token') as $question => $answer) {
 			$questionId = substr(strstr($question, '-'), 1);
 			$question = Question::find($questionId);
-			$results[] = [
-				'question' => $question->question,
-				'result' => $question->isCorrectAnswer($answer)
+			$correctAnswer = $question->isCorrectAnswer($answer);
+			$result = [
+				'question' => $question,
+				'result' => $correctAnswer
 			];
-
+			if (!$correctAnswer) {
+				$result['falseAnswer'] = Answer::find($answer);
+				$result['trueAnswer'] = $question->getCorrectAnswer()[0];
+			} else {
+				$countCorrectAnswers++;
+			}
+			$results[] = $result;
 		}
-		return $results;
+		$stats = [
+			'numberOfQuestions' => $countAllQuestions,
+			'numberOfCorrectAnswers' => $countCorrectAnswers,
+			'percentage' =>  ($countCorrectAnswers / $countAllQuestions) * 100
+		];
+		return view('pages.summary', ['results' => $results, 'stats' => $stats]);
+//		return $results;
 	}
 
 	/**

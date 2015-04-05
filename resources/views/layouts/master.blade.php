@@ -10,14 +10,13 @@
 
 	@section('css')
 		{!! HTML::style('css/app.css') !!}
-		{!! HTML::style('css/jquery.steps.css') !!}
+		{!! HTML::style('css/style.css') !!}
         <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/master/dist/cdnjs/3.3.1/css/bootstrap-rtl.min.css">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-	@show
+    @show
     @section('js')
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         {!! HTML::script('js/bootstrap.min.js') !!}
-        {!! HTML::script('js/jquery.steps.min.js') !!}
+        {!! HTML::script('js/jquery.easyWizard.js') !!}
     @show()
 
 
@@ -25,10 +24,8 @@
 
 <body>
 	<div class="container">
-        <h1>שאלון אופק מתא״ם</h1>
-        <div class="well">
-            @yield('content')
-        </div>
+        <h1><img src="{!! URL::asset('images/logo.jpg') !!}" alt="Ofek Mitam"/></h1>
+        @yield('content')
     </div>
 
 </body>

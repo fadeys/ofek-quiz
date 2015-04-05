@@ -44,10 +44,10 @@
                             {!! Form::open(['route' => 'admin.answers.store', 'method' => 'POST']) !!}
                             {!! Form::hidden('question_id', $question->id) !!}
                             {!! Form::hidden('correct', '1') !!}
-                            <div class="form-group">
-                                <label class="control-label" for="answer-name">שם התשובה הנכונה: (לא חובה)</label>
-                                {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'answer-name']) !!}
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label class="control-label" for="answer-name">שם התשובה הנכונה: (לא חובה)</label>--}}
+                                {{--{!! Form::text('name', null, ['class' => 'form-control', 'id' => 'answer-name']) !!}--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <label class="control-label" for="answer-answer">התשובה הנכונה:</label>
                                 {!! Form::textarea('answer', null, ['class' => 'form-control', 'id' => 'answer-answer']) !!}
@@ -73,10 +73,10 @@
                         {!! Form::open(['route' => 'admin.answers.store', 'method' => 'POST']) !!}
                         {!! Form::hidden('question_id', $question->id) !!}
                         {!! Form::hidden('correct', '0') !!}
-                        <div class="form-group">
-                            <label class="control-label" for="wrong-answer-name">שם התשובה הלא נכונה (לא חובה):</label>
-                            {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'wrong-answer-name']) !!}
-                        </div>
+                        {{--<div class="form-group">--}}
+                            {{--<label class="control-label" for="wrong-answer-name">שם התשובה הלא נכונה (לא חובה):</label>--}}
+                            {{--{!! Form::text('name', null, ['class' => 'form-control', 'id' => 'wrong-answer-name']) !!}--}}
+                        {{--</div>--}}
                         <div class="form-group">
                             <label class="control-label" for="wrong-answer-answer">התשובה הלא נכונה</label>
                             {!! Form::textarea('answer', null, ['class' => 'form-control', 'id' => 'wrong-answer-answer']) !!}
