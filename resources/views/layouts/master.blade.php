@@ -16,7 +16,7 @@
     @section('js')
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         {!! HTML::script('js/bootstrap.min.js') !!}
-        {!! HTML::script('js/jquery.easyWizard.js') !!}
+        {!! HTML::script('js/quiz.js') !!}
     @show()
 
 

@@ -1,4 +1,4 @@
-<section class="step" data-step-title="lala">
+<div class="step">
     <h3>{!! $question->name !!}</h3>
     <h4 class="info-text">{!! $question->question !!}</h4>
     <div class="answers">
@@ -11,4 +11,4 @@
             </div>
         @endforeach
     </div>
-</section>
+</div>

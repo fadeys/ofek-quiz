@@ -7,6 +7,9 @@
 .summary-result-wrapper.wrong h3 {
   color: #ff1e3a;
 }
+.step {
+  padding-bottom: 20px;
+}
 body {
   text-align: right;
   direction: rtl;
