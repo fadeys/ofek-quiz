@@ -1,0 +1,7 @@
+# ignore 'cache' and 'formulas' folders
+cache/**
+!cache/.htaccess
+!cache/info.txt
+formulas/**
+!formulas/.htaccess
+!formulas/info.txt

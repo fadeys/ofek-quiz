@@ -16,6 +16,7 @@
     @section('js')
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         {!! HTML::script('js/bootstrap.min.js') !!}
+        {!! HTML::script('vendor/ckeditor/plugins/ckeditor_wiris/integration/WIRISplugins.js?viewer=image') !!}
         {!! HTML::script('js/quiz.js') !!}
     @show()
 

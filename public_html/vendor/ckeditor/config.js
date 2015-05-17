@@ -4,7 +4,11 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For example:
 	 config.language = 'he';
-	// config.uiColor = '#AADC6E';
+
+
+	// Add WIRIS to the plugin list
+	config.extraPlugins += (config.extraPlugins.length == 0 ? '' : ',') + 'ckeditor_wiris';
+	config.allowedContent = true;
+
 };

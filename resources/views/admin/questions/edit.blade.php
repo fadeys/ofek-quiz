@@ -26,7 +26,7 @@
     </div>
 @endsection
 
-@section('js')
-    @parent
-    {!! HTML::script('vendor/ckeditor/ckeditor.js') !!}
-@endsection
+{{--@section('js')--}}
+    {{--@parent--}}
+    {{--{!! HTML::script('vendor/ckeditor/ckeditor.js') !!}--}}
+{{--@endsection--}}
